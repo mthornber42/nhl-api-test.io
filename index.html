@@ -2,11 +2,23 @@
   <script>
     function myFunction() {
       document.getElementById("contents").style.color = "#ff0000";
+
+      fetch(url).then(function(response) {
+        document.getElementById("console").innerHTML = response.json();
+      }).then(function(data) {
+        console.log(data);
+        document.getElementById("console").innerHTML = data;
+      }).catch(function(err) {
+        console.log('Fetch Error :-S', err);
+        document.getElementById("console").innerHTML = err;
+      });
     }
   </script>
   <body onload="myFunction()">
     <div id="contents">
       Test text
+    </div>
+    <div id="console">
     </div>
   </body>
 </html>
