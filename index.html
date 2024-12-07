@@ -3,6 +3,8 @@
     function myFunction() {
       document.getElementById("contents").style.color = "#ff0000";
 
+      var url = "www.google.com";
+
       fetch(url).then(function(response) {
         document.getElementById("console").innerHTML = response.json();
       }).then(function(data) {
